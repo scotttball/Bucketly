@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+@import "materialize/components/color";
+$primary-color: color("light-green", "darken-3") !default;
+$secondary-color: color("orange", "lighten-1") !default;
+@import "materialize";

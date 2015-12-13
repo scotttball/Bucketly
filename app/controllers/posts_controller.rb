@@ -2,15 +2,25 @@ class PostsController < ApplicationController
   before_action :params_id, only: [:show, :update, :edit, :destroy]
 
   def index
-    @user = User.find(params_id[:id])
-    @posts = Posts.where(user_id: @user)
+    @user = User.find(params[:user_id])
+    @posts = @user.posts
   end
 
   def show
   end
 
   def new
-    @post = Post.new(user_id: params_id[:user_id])
+    @post = Post.new(user_id: params[:user_id])
+  end
+
+  def create
+    @post = Post.new(post_params)
+    if @post.save
+      @post.update(user_id: params[:user_id])
+      redirect_to user_posts_path(current_user)
+    else
+      render :new
+    end
   end
 
   def edit
@@ -37,11 +47,11 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    Post.require(:post).permit(:title, :description, :body, :user_id)
+    params.require(:post).permit(:title, :description, :body, :user_id)
   end
 
   def params_id
-    @post = Post.find(params_id[:id])
+    @post = Post.find(params[:id])
   end
 
 end

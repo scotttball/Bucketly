@@ -1,2 +1,14 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<div class="row">
+  <div class="col s10 offset-s1">
+  <%= @user.first_name %><%= @user.last_name %>
+  <% if @user.posts.any? %>
+    <% @posts.each do |post| %>
+      <h4><%= post.title %></h4>
+      <p><%= post.description %></p>
+      <p><%= post.body %></p>
+    <% end %>
+  <% else %>
+    <h3>No Posts</h3>
+  <% end %>
+  </div>
+</div>

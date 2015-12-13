@@ -28,7 +28,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Unicorn as the app server
 # gem 'unicorn'
+gem 'materialize-sass'
 gem 'devise', '~> 3.4.0'
+gem 'material_icons'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

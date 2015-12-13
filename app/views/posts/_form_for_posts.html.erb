@@ -1,0 +1,15 @@
+<% if user_signed_in? %>
+  <%= form_for [current_user, @post] do |f|%>
+    <br />
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    <br />
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+    <br />
+    <%= f.label :body %>
+    <%= f.text_area :body %>
+    <br />
+    <%= f.submit 'Submit', class: 'btn', onclick: "Materialize.showStaggeredList('#staggered-test')" %>
+  <% end %>
+<% end %>

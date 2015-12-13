@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   
   def index
     @users = User.all 
-    @post = @user.post.first.order updated_at: :desc
+    @posts = Post.all
   end
 
   def show

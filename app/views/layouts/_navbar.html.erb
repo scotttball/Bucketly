@@ -1,0 +1,19 @@
+<div class="navbar-fixed">
+  <nav>
+    <div class="nav-wrapper">
+      <a href="/" class="brand-logo center">Bucketly</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <% if user_signed_in? %>
+          <li><%= link_to 'New Post' , new_user_post_path(current_user) %></li>
+          <li><%= link_to 'View Posts' , user_posts_path(current_user) %></li>
+          <li><%= link_to 'Edit Profile', edit_user_registration_path %></li>
+          <li><%= link_to 'Signout', destroy_user_session_path, method: :delete %></li>
+        <% else %>
+          <li><a href="/users/sign_in">User Sign In</a></li>
+          <li><a href="/users/sign_up">User Signup</a></li>
+        <% end %>
+      </ul>
+    </div>
+  </nav>
+</div>
+        
