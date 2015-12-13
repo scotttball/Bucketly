@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :params_id, only: [:show, :update, :edit, :destroy]
   
   def index
+    # @user = User.find(params[:user_id])
     @users = User.all 
     @posts = Post.all
   end

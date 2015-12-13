@@ -1,14 +1,35 @@
 <div class="row">
-  <div class="col s10 offset-s1">
-  <%= @user.first_name %><%= @user.last_name %>
-  <% if @user.posts.any? %>
-    <% @posts.each do |post| %>
-      <h4><%= post.title %></h4>
-      <p><%= post.description %></p>
-      <p><%= post.body %></p>
+  <div class="col s12">
+    <%= @user.first_name %><%= @user.last_name %>
+    <% if @user.posts.any? %>
+      <% @posts.each do |p| %>
+          <div class="col s4">
+            <div class="card">
+              <div class="card-image">
+                <img src="http://www.kevinandamanda.com/whatsnew/wp-content/uploads/2014/06/eiffel-tower-paris-france-01.jpg">
+                <span class="card-title"><%= p.title %></span>
+              </div>
+              <div class="card-content">
+                <p><%= p.description %></p>
+              </div>
+              <div class="card-action">
+              <!-- todo put link here -->
+                <p>
+                  <% if p.completed == true %> 
+                    <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" />
+                    <label for="filled-in-box">Completed</label>
+                  <% else %>
+                    <input type="checkbox" class="filled-in" id="filled-in-box" />
+                    <label for="filled-in-box">Not Completed</label>
+                  <% end %>
+                </p>
+                <!-- need to make like to view more about post -->
+              </div>
+            </div>
+        </div>
+      <% end %>
+    <% else %>
+      <h1>No Posts</h1>
     <% end %>
-  <% else %>
-    <h3>No Posts</h3>
-  <% end %>
   </div>
 </div>

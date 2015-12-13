@@ -10,6 +10,11 @@
     <%= f.label :body %>
     <%= f.text_area :body %>
     <br />
+    <%= f.label :completed %>
+    <%= f.check_box :completed %>
+    <br />
+    <br />
     <%= f.submit 'Submit', class: 'btn', onclick: "Materialize.showStaggeredList('#staggered-test')" %>
+
   <% end %>
 <% end %>
