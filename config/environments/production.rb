@@ -1,13 +1,13 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-  config.paperclip_defaults = {
-    :storage => :fog,
-    :fog_credentials => {
-    :provider => "AWS",
-    :aws_access_key_id => ENV['AKIAINGNWONZVFDGAF5Q'],
-    :aws_secret_access_key => ENV['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']
-  },
-  :fog_directory => ENV["ball-devpoint-development"]
+    config.paperclip_defaults = {
+      :storage => :fog,
+      :fog_credentials => {
+        :provider => "AWS",
+        :aws_access_key_id => ENV['AKIAINGNWONZVFDGAF5Q'],
+        :aws_secret_access_key => ENV['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']
+      },
+      :fog_directory => ENV["ball-devpoint-development"]
 }
   # Code is not reloaded between requests.
   config.cache_classes = true
