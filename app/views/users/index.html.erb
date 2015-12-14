@@ -3,7 +3,7 @@
     <% if @posts.any? %>
       <% @posts.each do |post| %>
           <div class="col s12 m6 l4">
-          <%= link_to user_post_path(@user, p) do %>
+          <%= link_to user_path(post.user_id, post) do %>
             <div class="card">
               <div class="card-image">
                 <%= image_tag post.picture.url(:original), class: "center" %>
@@ -12,15 +12,24 @@
               <div class="card-content">
                 <p><%= post.description %></p>
               </div>
-              <div class="card-action">
-                <p><%#= link_to user_post_path(@user, post), View Post %></p> 
+              <div class="card-action center">
+                  <% if post.completed == true %> 
+                    <i class="material-icons">check_circle</i><br />
+                    <label>Completed</label>
+                  <% else %>
+                    <i class="material-icons center">panorama_fish_eye</i><br />
+                    <label>Not Completed</label>
+                  <% end %>
               </div>
             </div>
             <% end %>
           </div>
       <% end %>
     <% else %>
-        <h1 class="center">No Posts</h1>
+      <div class="center">
+      <h1>No Posts</h1>
+      <img src="http://static4.fjcdn.com/comments/Cuteness+has+reached+critical+mass+_03d8c3cf58d9c8493503b303be3ca7a7.png">
+      </div>
     <% end %>
   </div>
 </div>

@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :params_id, only: [:show, :update, :edit, :destroy]
   
   def index
-    @users = User.all 
+    @users = User.all
     @posts = Post.all.order updated_at: :desc
   end
 
@@ -41,7 +41,7 @@ class UsersController < ApplicationController
   private
 
   def params_id
-    User.require(:user).permit(:first_name, :last_name, :display_name, :bio, :location, :email, :user_id, :avatar)
+    User.require(:user).permit(:title, :description, :body, :user_id, :completed, :picture, :user_id, :first_name, :last_name, :display_name, :bio, :location, :email, :user_id, :avatar)
   end
 
   def user_params

@@ -13,10 +13,10 @@
     <% if @user.posts.any? %>
       <% @posts.each do |p| %>
       <div class="col s12 m5 l4">
-            <%= link_to user_post_path(@user, p) do %>
+            <%= link_to user_post_path(p.user_id, p) do %>
             <div class="card">
               <div class="card-image">
-                <%= image_tag @post.picture.url(:original), class: "center" %>
+                <%= image_tag p.picture.url(:original), class: "center" %>
                 <span class="card-title"><%= p.title %></span>
               </div>
               <div class="card-content">
