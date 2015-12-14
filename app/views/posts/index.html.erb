@@ -3,7 +3,7 @@
     <div class="container">
     <h1 class="center"><%= @user.first_name %> <%= @user.last_name %></h1>
     <br />
-    <%= image_tag @user.avatar.url(:square), class: "avatar center" %>
+    <%= image_tag @user.avatar.url(:medium), class: "avatar center" %>
     <br />
     <p class="center"><%= @user.bio %></p>
     <p class="center"><%= @user.location %></p>

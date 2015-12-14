@@ -35,6 +35,7 @@ gem 'devise', '~> 3.4.0'
 gem 'material_icons'
 gem 'aws-sdk-v1'
 gem 'paperclip'
+gem "figaro"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
