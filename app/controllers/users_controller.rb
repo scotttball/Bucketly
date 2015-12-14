@@ -2,9 +2,8 @@ class UsersController < ApplicationController
   before_action :params_id, only: [:show, :update, :edit, :destroy]
   
   def index
-    # @user = User.find(params[:user_id])
     @users = User.all 
-    @posts = Post.all
+    @posts = Post.all.order updated_at: :desc
   end
 
   def show
@@ -42,7 +41,7 @@ class UsersController < ApplicationController
   private
 
   def params_id
-    User.require(:user).permit(:first_name, :last_name, :display_name, :bio, :location, :email, :user_id)
+    User.require(:user).permit(:first_name, :last_name, :display_name, :bio, :location, :email, :user_id, :avatar)
   end
 
   def user_params

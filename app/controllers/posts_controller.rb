@@ -3,10 +3,11 @@ class PostsController < ApplicationController
 
   def index
     @user = User.find(params[:user_id])
-    @posts = @user.posts
+    @posts = @user.posts.order updated_at: :desc
   end
 
   def show
+    @user = User.find(params[:user_id])
   end
 
   def new
@@ -47,7 +48,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :description, :body, :user_id, :completed)
+    params.require(:post).permit(:title, :description, :body, :user_id, :completed, :picture)
   end
 
   def params_id

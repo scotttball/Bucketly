@@ -12,8 +12,28 @@
  *
  *= require_tree .
  *= require_self
+ *= require material_icons
+ *= require 'masonry/basic'
+ *= require 'masonry/centered'
+ *= require 'masonry/fluid'
+ *= require 'masonry/gutters'
+ *= require 'masonry/infinitescroll'
+ *= require 'masonry/right-to-left'
+ *= require 'masonry/transitions'
  */
 @import "materialize/components/color";
 $primary-color: color("light-green", "darken-3") !default;
 $secondary-color: color("orange", "lighten-1") !default;
 @import "materialize";
+
+.nav-wrapper {
+    position: relative;
+    height: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+a {
+  color: inherit; /* blue colors for links too */
+  text-decoration: inherit; /* no underline */
+}

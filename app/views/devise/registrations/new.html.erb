@@ -1,13 +1,43 @@
 <div class="row">
-  <div class="col s10 offset-s1">
+  <div class="col s12 m10 offset-m1 l8 offset-l2">
     <h2>Sign up</h2>
 
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= devise_error_messages! %>
 
       <div class="field">
+        <%= f.label :avatar %><br />
+        <%= f.file_field :avatar %>
+      </div>
+      
+      <div class="field">
         <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true %>
+        <%= f.text_field :email, autofocus: true %>
+      </div>
+
+      <div class="field">
+        <%= f.label :first_name %><br />
+        <%= f.text_field :first_name %>
+      </div>
+
+      <div class="field">
+        <%= f.label :last_name %><br />
+        <%= f.text_field :last_name %>
+      </div>
+
+      <div class="field">
+        <%= f.label :display_name %><br />
+        <%= f.text_field :display_name %>
+      </div>
+
+      <div class="field">
+        <%= f.label :location %><br />
+        <%= f.text_field :location %>
+      </div>
+
+      <div class="field">
+        <%= f.label :bio %><br />
+        <%= f.text_area :bio %>
       </div>
 
       <div class="field">
@@ -27,7 +57,7 @@
         <%= f.submit "Sign up", class: "btn", onclick: "Materialize.showStaggeredList('#staggered-test')" %>
       </div>
     <% end %>
-
+    <br />
     <%= render "devise/shared/links" %>
   </div>
 </div>

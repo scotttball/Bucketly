@@ -1,7 +1,37 @@
 <div class="row">
-  <div class="col s10 offset-s1">
+  <div class="col s12 m10 offset-m1 l10 offset-l1">
+      <br />
+      <br />
+    <div class="title center"><h1><%= @post.title %></h1></div>
+      <br />
+    <div class="description center"><h4><%= @post.description %></h4></div>
+      <br />
+      <br />
+    <p><%= @post.body %><p>
+      <br />
+      <br />
 
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+    <div class="center">
+    <% if @post.completed == true %> 
+      <i class="material-icons md-36">check_circle</i><br />
+      <label>Completed</label>
+    <% else %>
+      <i class="material-icons center md-36">panorama_fish_eye</i><br />
+      <label>Not Completed</label>
+    <% end %>
+    </div>
+    <br />
+    <div class="center">
+    <% if user_signed_in? %>
+      <%= link_to 'Edit Post', edit_user_post_path(@user, @post), class: "btn", onclick: "Materialize.showStaggeredList('#staggered-test')" %>
+      <br />
+      <br />
+      <%= link_to 'Delete Post', user_post_path(@user, @post), method: :delete, data: {confirm: "Are you sure you want to delete this post?"} , class: "btn", onclick: "Materialize.showStaggeredList('#staggered-test')" %>
+    <% end %>
+    </div>
+    <br />
+    <div class="center">
+    <%= link_to 'Back to Posts', user_posts_path(@user), class: "btn", onclick: "Materialize.showStaggeredList('#staggered-test')" %>
+    </div>
   </div>
 </div>

@@ -1,20 +1,32 @@
 <% if user_signed_in? %>
   <%= form_for [current_user, @post] do |f|%>
     <br />
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-    <br />
-    <%= f.label :description %>
-    <%= f.text_field :description %>
-    <br />
-    <%= f.label :body %>
-    <%= f.text_area :body %>
-    <br />
-    <%= f.label :completed %>
-    <%= f.check_box :completed %>
-    <br />
+
+    <div class="field">
+        <%= f.label :picture %><br />
+        <%= f.file_field :picture %>
+    </div>
+
+    <div class="field">
+        <%= f.label :title %>
+        <%= f.text_field :title, placeholder: "What is your thing to put on the Bucketly" %>
+    </div>
+
+    <div class="field">
+        <%= f.label :description %> <b>(120 characters maximum)</b>
+        <%= f.text_field :description, placeholder: "Give a short description of your aspiration/adventure", :maxlength=>"120" %>
+    </div>
+
+    <div class="field">
+        <%= f.label :body %>
+        <%= f.text_area :body, placeholder: "What did you accomplish?" %>
+    </div>
+
+    <div class="field">
+        <%= f.check_box :completed %>
+        <%= f.label :completed %>
+    </div>
     <br />
     <%= f.submit 'Submit', class: 'btn', onclick: "Materialize.showStaggeredList('#staggered-test')" %>
-
   <% end %>
 <% end %>
