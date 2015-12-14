@@ -1,12 +1,12 @@
-<div id="container" class="transitions-enabled centered clearfix masonry">
 <div class="row">
   <div class="col s12 m12 l12">
     <% if @posts.any? %>
       <% @posts.each do |post| %>
           <div class="col s12 m6 l4">
+          <%= link_to user_post_path(@user, p) do %>
             <div class="card">
               <div class="card-image">
-                <img src="http://www.kevinandamanda.com/whatsnew/wp-content/uploads/2014/06/eiffel-tower-paris-france-01.jpg" />
+                <%= image_tag post.picture.url(:original), class: "center" %>
                 <span class="card-title"><%= post.title %></span>
               </div>
               <div class="card-content">
@@ -16,13 +16,13 @@
                 <p><%#= link_to user_post_path(@user, post), View Post %></p> 
               </div>
             </div>
+            <% end %>
           </div>
       <% end %>
     <% else %>
         <h1 class="center">No Posts</h1>
     <% end %>
   </div>
-</div>
 </div>
 
 

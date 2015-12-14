@@ -32,10 +32,9 @@ a {
 }
 
 .avatar {
-    width:200px;
-    margin: 20px;
-    border:10px;
-    border-radius: 200px;
-    -webkit-border-radius: 500px;
-    -moz-border-radius: 500px;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
 }
