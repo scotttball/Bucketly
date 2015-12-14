@@ -4,11 +4,11 @@ Rails.application.configure do
       :storage => :fog,
       :fog_credentials => {
         :provider => "AWS",
-        :aws_access_key_id => ENV['AKIAINGNWONZVFDGAF5Q'],
-        :aws_secret_access_key => ENV['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']
+        :aws_access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+        :aws_secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
       },
-      :fog_directory => ENV["ball-devpoint-development"]
-}
+      :fog_directory => ENV["S3_BUCKET_NAME"]
+    }
   # Code is not reloaded between requests.
   config.cache_classes = true
 
