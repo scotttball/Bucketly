@@ -36,6 +36,7 @@ gem 'material_icons'
 gem 'aws-sdk-v1'
 gem 'paperclip'
 gem "figaro"
+gem 'puma'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
