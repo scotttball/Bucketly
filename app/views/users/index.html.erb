@@ -3,8 +3,8 @@
     <% if @posts.any? %>
       <% @posts.each do |post| %>
           <div class="col s12 m6 l4">
-          <%= link_to user_path(post.user_id, post) do %>
-            <div class="card">
+          <%= link_to user_post_path(post.user_id, post) do %>
+            <div class="card sizecard">
               <div class="card-image">
                 <%= image_tag post.picture.url(:original), class: "center" %>
                 <span class="card-title"><%= post.title %></span>
@@ -17,7 +17,7 @@
                     <i class="material-icons">check_circle</i><br />
                     <label>Completed</label>
                   <% else %>
-                    <i class="material-icons center">panorama_fish_eye</i><br />
+                    <i class="material-icons">panorama_fish_eye</i><br />
                     <label>Not Completed</label>
                   <% end %>
               </div>

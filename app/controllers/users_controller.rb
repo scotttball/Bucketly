@@ -11,7 +11,6 @@ class UsersController < ApplicationController
   end
 
   def create
-    binding.pry
     @user = User.new(user_params)
     if @user.save
       redirect_to users_path
@@ -42,7 +41,7 @@ class UsersController < ApplicationController
   private
 
   def params_id
-    User.require(:user).permit(:first_name, :last_name, :display_name, :bio, :location, :email, :user_id, :avatar)
+    params.require(:user).permit(:first_name, :last_name, :display_name, :bio, :location, :email, :user_id, :avatar)
   end
 
   def user_params

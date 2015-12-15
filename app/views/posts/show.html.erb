@@ -1,9 +1,10 @@
-<img src
 <div class="row">
   <div class="col s12 m10 offset-m1 l10 offset-l1">
       <br />
-      <%= image_tag @post.picture.url(:square), class: "avatar center" %>
       <br />
+      <div class="center">
+      <%= image_tag @post.picture.url(:original), class: "avatar" %>
+      </div>
       <br />
     <div class="title center"><h1><%= @post.title %></h1></div>
       <br />
