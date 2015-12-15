@@ -13,4 +13,4 @@
 /tmp
 
 # .gitignore
-/config/aws_secrets.rb
+/config/aws_secrets.yml
