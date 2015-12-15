@@ -11,6 +11,4 @@
 /log/*
 !/log/.keep
 /tmp
-
-# .gitignore
 /config/aws_secrets.yml
